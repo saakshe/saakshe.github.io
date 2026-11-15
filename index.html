@@ -139,6 +139,17 @@ nav.select{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .cover.pod canvas{width:56px;height:56px;margin-top:6px}
 .c-pink{background:#ffb3c8}.c-blue{background:#9cc4ff}.c-violet{background:#c3b4ff}.c-green{background:#9be36d}.c-sun{background:#ffd23f}.c-orange{background:#ffb26b}.c-red{background:#ff8a80}.c-teal{background:#7fdccb}.c-grey{background:#c9cfdb}.c-lime{background:#d4f04a}.c-blush{background:#ffd6e0}
 .reel-ctl{display:flex;gap:10px}
+a.cover{text-decoration:none}
+.learn{margin-top:26px;padding-top:18px;border-top:4px dotted var(--edge);display:grid;gap:10px}
+.learn-row{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:flex;align-items:center;gap:10px;border:3px solid #1d1b2e;box-shadow:4px 4px 0 var(--shadow);padding:8px 16px 8px 10px;font-weight:700;font-size:1.1rem;color:#1d1b2e}
+.chip canvas{width:34px;height:34px}
+.lvl-links{display:flex;flex-wrap:wrap;gap:12px;margin-left:auto}
+a.chip{text-decoration:none}
+a.chip:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--shadow)}
+.cover .listen{font-family:var(--term);font-size:1rem;margin-top:-2px;white-space:nowrap}
+.cover.pod.long b{font-size:1.15rem}
+a.cover:hover .listen{text-decoration:underline}
 .book{background:var(--slot);border:3px solid var(--edge);padding:12px;display:grid;gap:8px;justify-items:start;min-width:0}
 .book canvas{width:48px;height:48px}
 .book b{font-weight:600;font-size:1.15rem}
@@ -182,6 +193,10 @@ nav.select{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .links{display:flex;flex-wrap:wrap;gap:12px}
 .link-btn{text-decoration:none;display:inline-block;background:var(--panel);color:var(--ink)}
 .link-btn:hover{background:var(--sun);color:#1d1b2e}
+.cta{display:inline-block;margin-top:20px;text-decoration:none;background:var(--pink);color:#fff}
+.cta:hover{background:var(--sun);color:#1d1b2e}
+.contact-card.book{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.contact-card.book p{color:var(--muted);max-width:52ch}
 
 footer{padding-block:24px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-family:var(--term);font-size:1.2rem;color:var(--muted)}
 
@@ -223,6 +238,7 @@ footer{padding-block:24px 48px;display:flex;flex-wrap:wrap;justify-content:space
           <div class="stat"><span class="label">Guild</span><b>Sarvam</b></div>
           <div class="stat"><span class="label">Trained at</span><b>BITS Pilani, Goa</b></div>
         </div>
+        <a class="btn cta" href="https://topmate.io/saakshi_adiga28/" target="_blank" rel="noopener">Book a 1:1 chat with me</a>
       </div>
       <div class="game" id="game" tabindex="0" role="application" aria-label="Cake Run mini game. Press Space or tap to jump.">
         <div class="game-hud"><span class="label">Cake Run</span><span>Score <b id="gScore">0</b> · Best <b id="gBest">0</b></span></div>
@@ -275,25 +291,30 @@ footer{padding-block:24px 48px;display:flex;flex-wrap:wrap;justify-content:space
   <div class="zone">
     <div class="lvl">
       <div class="badge"><span data-sprite="book"></span></div>
-      <div class="lvl-text"><p class="label">Level 4 · The Library</p><h2>On the nightstand</h2><p>What I like to listen to, read, watch and learn about.</p></div>
+      <div class="lvl-text"><p class="label">Level 4 · The Library</p><h2>On the nightstand</h2><p>What I like to listen to, read and learn about.</p></div>
+      <div class="lvl-links">
+        <a class="chip c-green" href="https://www.goodreads.com/user/show/122545153" target="_blank" rel="noopener"><span data-sprite="book"></span>My reads on Goodreads</a>
+        <a class="chip c-orange" href="https://substack.com/@saakshiadiga1" target="_blank" rel="noopener"><span data-sprite="page"></span>My Substack</a>
+      </div>
     </div>
     <div class="reel-wrap">
-      <div class="reel" id="reel" tabindex="0" aria-label="Books, podcasts, shows and topics I am learning, scroll sideways">
-        <div class="cover c-pink"><span class="tag">Book</span><b>Book Lovers</b><span class="by">Emily Henry</span></div>
-        <div class="cover c-blue"><span class="tag">Book</span><b>Beach Read</b><span class="by">Emily Henry</span></div>
-        <div class="cover c-violet"><span class="tag">Book</span><b>The Love Hypothesis</b><span class="by">Ali Hazelwood</span></div>
-        <div class="cover c-green"><span class="tag">Book</span><b>Check &amp; Mate</b><span class="by">Ali Hazelwood</span></div>
-        <div class="cover pod c-sun"><span class="tag">Podcast</span><span data-sprite="phones" data-v="0"></span><b>Two by Two</b></div>
-        <div class="cover pod c-orange"><span class="tag">Podcast</span><span data-sprite="phones" data-v="1"></span><b>Lenny's Podcast</b></div>
-        <div class="cover pod c-red"><span class="tag">Show</span><span data-sprite="tv" data-v="0"></span><b>The Mentalist</b></div>
-        <div class="cover pod c-teal"><span class="tag">Show</span><span data-sprite="tv" data-v="1"></span><b>The Diplomat</b></div>
-        <div class="cover pod c-grey"><span class="tag">Show</span><span data-sprite="tv" data-v="2"></span><b>Law &amp; Order</b></div>
-        <div class="cover pod c-lime"><span class="tag">Learning</span><span data-sprite="matrix"></span><b>Game theory</b></div>
-        <div class="cover pod c-blush"><span class="tag">Learning</span><span data-sprite="brain"></span><b>The human brain</b></div>
+      <div class="reel" id="reel" tabindex="0" aria-label="Podcasts, scroll sideways">
+        <a class="cover pod c-sun" href="https://open.spotify.com/show/7tyBxrqQYwQAFQPr6ACsMn" target="_blank" rel="noopener"><span class="tag">Podcast</span><span data-sprite="phones" data-v="0"></span><b>Two by Two</b><span class="by">The Ken</span><span class="listen">▶ Listen on Spotify</span></a>
+        <a class="cover pod c-orange" href="https://open.spotify.com/show/2dR1MUZEHCOnz1LVfNac0j" target="_blank" rel="noopener"><span class="tag">Podcast</span><span data-sprite="phones" data-v="1"></span><b>Lenny's Podcast</b><span class="by">Lenny Rachitsky</span><span class="listen">▶ Listen on Spotify</span></a>
+        <a class="cover pod c-teal" href="https://open.spotify.com/show/2N3NVn7d3z1N2KQiyBNVNQ" target="_blank" rel="noopener"><span class="tag">Podcast</span><span data-sprite="phones" data-v="0"></span><b>Daybreak</b><span class="by">The Ken</span><span class="listen">▶ Listen on Spotify</span></a>
+        <a class="cover pod c-blue" href="https://open.spotify.com/show/1DQF5Yi3m6LykJDwiy8qxh" target="_blank" rel="noopener"><span class="tag">Podcast</span><span data-sprite="phones" data-v="1"></span><b>The Ancients</b><span class="by">History Hit</span><span class="listen">▶ Listen on Spotify</span></a>
+        <a class="cover pod c-pink long" href="https://open.spotify.com/show/4EcnTbqEgeFb4EeUkv1wsy" target="_blank" rel="noopener"><span class="tag">Podcast</span><span data-sprite="phones" data-v="0"></span><b>Two Scientists Walk Into a Bar</b><span class="by">Genentech</span><span class="listen">▶ Listen on Spotify</span></a>
       </div>
       <div class="reel-ctl">
         <button class="btn" type="button" id="reelPrev" aria-label="Scroll left">◀</button>
         <button class="btn" type="button" id="reelNext" aria-label="Scroll right">▶</button>
+      </div>
+    </div>
+    <div class="learn">
+      <span class="label">Currently learning</span>
+      <div class="learn-row">
+        <div class="chip c-lime"><span data-sprite="matrix"></span>Game theory</div>
+        <div class="chip c-blush"><span data-sprite="brain"></span>Psychology</div>
       </div>
     </div>
   </div>
@@ -330,7 +351,7 @@ footer{padding-block:24px 48px;display:flex;flex-wrap:wrap;justify-content:space
   <div class="zone">
     <div class="lvl">
       <div class="badge"><span data-sprite="ball"></span></div>
-      <div class="lvl-text"><p class="label">Level 6 · Centre Court</p><h2>Your serve</h2><p>I only watch tennis, but I'm happy to rally over email. Say hello about work, a recipe, or a book I should read next.</p></div>
+      <div class="lvl-text"><p class="label">Level 6 · Centre Court</p><h2>Your serve</h2><p>I only watch tennis, but I'm happy to rally over email. Say hello about work, a recipe, or a book I should read next, or book a time to chat.</p></div>
     </div>
     <div class="contact-row">
       <div class="contact-card">
@@ -345,6 +366,7 @@ footer{padding-block:24px 48px;display:flex;flex-wrap:wrap;justify-content:space
           <a class="btn link-btn" href="https://x.com/SaakshiAdiga" target="_blank" rel="noopener">X</a>
           <a class="btn link-btn" href="https://www.instagram.com/saakshi_adiga/" target="_blank" rel="noopener">Instagram</a>
           <a class="btn link-btn" href="https://github.com/saakshe" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn link-btn" href="https://topmate.io/saakshi_adiga28/" target="_blank" rel="noopener">Topmate</a>
         </div>
       </div>
     </div>
@@ -367,6 +389,7 @@ const SPR={
  ball:["............","....kkkk....","..kkllllkk..",".kwllllllwk.",".klwllllwlk.","klllwllwlllk","klllwllwlllk",".klwllllwlk.",".kwllllllwk.","..kkllllkk..","....kkkk....","............"],
  phones:["............","...kkkkkk...","..kSSSSSSk..",".kSk....kSk.",".kk......kk.",".kk......kk.","kuuk....kuuk","kuUk....kUuk","kuUk....kUuk","kuuk....kuuk",".kk......kk.","............"],
  matrix:["............","kkkkkkkkkkkk","kuuuuukyyyyk","kuwwuukywyyk","kuuuuukyyyyk","kkkkkkkkkkkk","kyyyyykuuuuk","kywyyykuwwuk","kyyyyykuuuuk","kkkkkkkkkkkk","............","............"],
+ page:["............","..kkkkkkk...","..kwwwwwkk..","..kwkkkwwkk.","..kwwwwwwwk.","..kwkkkkkwk.","..kwwwwwwwk.","..kwkkkkkwk.","..kwwwwwwwk.","..kwkkkwwwk.","..kkkkkkkkk.","............"],
  tv:["............","...k....k...","....k..k....",".kkkkkkkkkk.",".kuuuuuuuSk.",".kuUuuuuuSk.",".kuuuuuuuSk.",".kuuuuuuukk.",".kuuuuuuuSk.",".kkkkkkkkkk.","..k......k..","............"],
  cloud:["....wwww........","..wwwwwwww..ww..",".wwwwwwwwwwwwww.","wwwwwwwwwwwwwwww"],
  egg:["...kk...","..kwwk..",".kwwwwk.",".kwwwwk.","kwwwwwwk","kwwwwwSk","kwwwwSSk",".kSSSSk.","..kkkk.."],
